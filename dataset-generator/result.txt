@@ -1,0 +1,27 @@
+Survey Analysis Results
+=======================
+
+Highest Orders by Count:
+Date: 23-02-2023
+Count: 42
+
+Highest Orders by Amount:
+Date: 03-06-2023
+Amount: 24705.40
+
+Lowest Orders by Count:
+Date: 03-09-2023
+Count: 1
+
+Lowest Orders by Amount:
+Date: 03-09-2023
+Amount: 237.37
+
+Maximum Average Order Value:
+Date: 13-04-2023
+Average Value: 323.98
+
+Minimum Average Order Value:
+Date: 07-02-2023
+Average Value: 227.57
+

@@ -1,0 +1,7 @@
+order-analyzer/node_modules
+order-analyzer/package-lock.json
+order-analyzer/parameters.json
+order-analyzer/credentials.json
+
+dataset-generator/data
+

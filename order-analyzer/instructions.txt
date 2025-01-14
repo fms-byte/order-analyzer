@@ -1,0 +1,87 @@
+Order Analysis Solution - Instructions
+Created by Md. Farhan Masud Shohag
+
+1. Environment Setup
+Prerequisites:
+    - Node.js (version 14 or higher)
+    - npm (Node Package Manager)
+    - A Google Cloud Project with enabled Google Sheets API
+    - A credentials.json file of Google Sheet Service in the root directory
+
+Install required dependencies:
+    - npm install
+    - Google Cloud Setup
+
+2. Project Files Setup
+Create the following files in your project directory:
+    - index.js - Main logic and express server code
+    - index.html - Frontend interface
+
+3. Running the Application
+    - Start the server: nodemon index.js
+    The server will start running on port 3000. You should see the message "running on port 3000" in the console.
+
+    - Access the application: Navigate to http://localhost:3000 in your web browser
+
+4. Using the Application
+In the web interface:
+    - Select a Start date using the date picker
+    - Select an End date using the date picker
+    - Click the "Analyze Orders" button
+
+View results:
+    - Results will appear below the form
+    - You'll see the Best Date to save and total refund amount
+    - Any errors will be displayed in red
+
+5. Solution Approach
+Problem Analysis: Our solution addresses the problem of finding the optimal date to save orders to minimize refund amounts. Here's how we approached it:
+
+Data Structure Design:
+    - Used Map data structure for efficient lookups
+    - Created separate maps for Orders and LineItems
+    - Organized data to optimize calculation speed
+
+Algorithm Implementation:
+    - Iterate through each date in the range
+    - Calculate total refund amount for each possible save date
+    - Track minimum refund amount and corresponding date
+    - Handle edge cases and date conversions
+
+Optimization Techniques:
+    - Parallel fetching of spreadsheet data
+    - Efficient date parsing and formatting
+    - Minimized memory usage with Map data structure
+    - Early termination when possible
+
+Error Handling:
+    - Input validation for dates
+    - Spreadsheet access error handling
+    - Data format validation
+    - User-friendly error messages
+
+Time Complexity:
+    - Order data processing: O(n) where n is number of orders, n<=10000
+    - Line item processing: O(m) where m is number of line items, m<=10000
+    - Date range iteration: O(d) where d is number of days in range, d<=10000
+    - Overall complexity: O(n + m + d) = O(10000 + 10000 + 10000) = O(30000)
+
+6. Testing
+To test the application:
+(i) Create a test Google Spreadsheet with the following structure:
+
+Orders Sheet:
+CopyOrder ID | Order Date
+1        | 01-01-2023
+2        | 02-01-2023
+...
+
+LineItems Sheet:
+CopyLineItem ID | Order ID | Price
+101         | 1        | 100.50
+102         | 2        | 200.75
+...
+
+(ii) Make the spreadsheet publicly accessible with view permissions
+(iii) Update the spreadsheetId in server.js with your spreadsheet ID
+(iv) Run test cases with different date ranges
