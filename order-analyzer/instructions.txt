@@ -16,6 +16,10 @@ Install required dependencies:
 Create the following files in your project directory:
     - index.js - Main logic and express server code
     - index.html - Frontend interface
+    - parameters.json - A json file containing the Public Spreadsheet ID. Syntax:
+    {
+        "spreadsheetId": <YOUR-PUBLIC-SPREADSHEET-ID-WITH-VIEW-ACCESS>
+    }
 
 3. Running the Application
     - Start the server: nodemon index.js
