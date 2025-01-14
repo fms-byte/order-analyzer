@@ -15,6 +15,12 @@ Before running the application, ensure you have the following installed:
 - npm (Node Package Manager)
 - A Google Cloud Project with the Google Sheets API enabled.
 - A `credentials.json` file for Google Sheets Service in the root directory.
+- A `parameters.json` file containing the Public Spreadsheet ID. Syntax:
+   ```json
+   {
+      "spreadsheetId": <YOUR-PUBLIC-SPREADSHEET-ID-WITH-VIEW-ACCESS>
+   }
+   ```
 
 ## Installation
 1. Clone the repository:
