@@ -16,6 +16,7 @@ Install required dependencies:
 Create the following files in your project directory:
     - index.js - Main logic and express server code
     - index.html - Frontend interface
+    - test.txt - file containing the sample Spreadsheet url
     - parameters.json - A json file containing the Public Spreadsheet ID. Syntax:
     {
         "spreadsheetId": <YOUR-PUBLIC-SPREADSHEET-ID-WITH-VIEW-ACCESS>
@@ -39,7 +40,7 @@ View results:
     - Any errors will be displayed in red
 
 5. Solution Approach
-Problem Analysis: Our solution addresses the problem of finding the optimal date to save orders to minimize refund amounts. Here's how we approached it:
+Problem Analysis: My solution addresses the problem of finding the optimal date to save orders to minimize refund amounts. Here's how we approached it:
 
 Data Structure Design:
     - Used Map data structure for efficient lookups
@@ -67,12 +68,11 @@ Error Handling:
 Time Complexity:
     - Order data processing: O(n) where n is number of orders, n<=10000
     - Line item processing: O(m) where m is number of line items, m<=10000
-    - Date range iteration: O(d) where d is number of days in range, d<=10000
-    - Overall complexity: O(n + m + d) = O(10000 + 10000 + 10000) = O(30000)
+    - Date range iteration: O(d) where d is number of days in range, 1<=d<=10000
+    - Overall complexity: O(n + m + d)
 
-6. Testing
-To test the application:
-(i) Create a test Google Spreadsheet with the following structure:
+
+6. Spreadsheet format:
 
 Orders Sheet:
 CopyOrder ID | Order Date
@@ -85,7 +85,3 @@ CopyLineItem ID | Order ID | Price
 101         | 1        | 100.50
 102         | 2        | 200.75
 ...
-
-(ii) Make the spreadsheet publicly accessible with view permissions
-(iii) Update the spreadsheetId in server.js with your spreadsheet ID
-(iv) Run test cases with different date ranges
